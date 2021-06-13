@@ -1,5 +1,5 @@
 def repeat_str(repeat, string):
-    print(f'"{string * repeat}"')
+    print(f"'{string * repeat}'")
 
 
 repeat_str(4, 'a')
