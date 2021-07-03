@@ -1,8 +1,19 @@
 def square_digits(num):
-    lista_numero = []
     numero = ''
     for i in str(num):
-        lista_numero.append(int(i)**2)
+        i = int(i) ** 2
+        numero = numero.__add__(str(i))
+    return int(numero)
 
 
-square_digits(9119)
+print(square_digits(9119))
+
+# def square_digits(num):
+#     num = str(num)
+#     ans = ''
+#     for i in num:
+#         ans += str(int(i)**2)
+#     return int(ans)
+#
+#
+# print(square_digits(9119))
