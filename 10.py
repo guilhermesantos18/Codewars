@@ -1,11 +1,21 @@
 def count_positives_sum_negatives(arr):
-    soma_pos = soma_neg = 0
+    cont_pos = soma_neg = cont_0 = 0
     lista_soma_nums_neg_e_pos = []
-    for num in arr:
-        if abs(num) == num:
-            soma_pos += num
-        lista_soma_nums_neg_e_pos.append(soma_pos)
+    if arr:
+        for num in arr:
+            if num == 0:
+                cont_0 += 1
+            if num == 0 and cont_0 == len(arr):
+                cont_pos = 0
+            elif abs(num) == num and num != 0:
+                cont_pos += 1
+            else:
+                soma_neg += num
+        lista_soma_nums_neg_e_pos.append(cont_pos)
+        lista_soma_nums_neg_e_pos.append(soma_neg)
+        return lista_soma_nums_neg_e_pos
+    else:
+        return lista_soma_nums_neg_e_pos
 
 
-
-count_positives_sum_negatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15])
+print(count_positives_sum_negatives([]))
