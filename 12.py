@@ -17,3 +17,9 @@ def alphabet_position(text):
 
 
 print(alphabet_position("The sunset sets at twelve o' clock."))
+
+# def alphabet_position(text):
+#     return(' '.join(str(ord(i)-96) for i in text.lower() if i in 'abcdefghijklmnopqrstuvwxyz'))
+#
+#
+# print(alphabet_position("The sunset sets at twelve o' clock."))
