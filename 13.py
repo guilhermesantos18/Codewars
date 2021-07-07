@@ -4,11 +4,11 @@ def diamond(n):
         return None
     elif n % 2 == 1:
         for num in range(1, n + 1, 2):
-            print(num)
-            expected += str('*'*num).center(n)
-            if num >= 3:
-                expected += str('*'*num).center(n)
-        return expected
+            expected = str('*'*num).center(n)
+            print(expected)
+        for num in range(n-2, 0, -2):
+            expected = str('*'*num).center(n)
+            print(expected)
 
 
-print(diamond(3))
+diamond(63)
