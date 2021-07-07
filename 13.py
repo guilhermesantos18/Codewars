@@ -1,5 +1,4 @@
 def diamond(n):
-    expected = ''
     if n % 2 == 0 or n <= 0:
         return None
     elif n % 2 == 1:
