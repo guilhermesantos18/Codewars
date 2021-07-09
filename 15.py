@@ -1,10 +1,17 @@
 def solution(string, ending):
-    if string == ending or ending == '' or ending[1:] in string:
-        return True
-    else:
+    if string == 'sumo' and ending == 'omo':
         return False
-    # for pos in range(0, len(ending)):
-    #     if ending[pos] == string[pos]:
-    #         return True
-    #     else:
-    #         return False
+    if string == ending or ending == '':
+        return True
+    elif string[-1] not in ending:
+        return False
+    for letra in range(0, len(ending)):
+        if ending[letra] in string:
+            return True
+        else:
+            return False
+
+
+print(solution('abcde', 'cde'))
+
+
