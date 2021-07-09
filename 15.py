@@ -14,4 +14,5 @@ def solution(string, ending):
 
 print(solution('abcde', 'cde'))
 
-
+# def solution(string, ending):
+#     return string.endswith(ending)
