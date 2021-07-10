@@ -10,10 +10,11 @@ def longest_consec(strarr, k):
         if passo == len(strarr):
             break
         if k >= 2:
-            lista_palavras_juntas.append(strarr[palavra] + strarr[passo])
+            lista_palavras_juntas.append(str(''.join(strarr[palavra:passo+1])))
             passo += 1
         else:
             lista_palavras_juntas.append(strarr[palavra])
+    print(sorted(lista_palavras_juntas, key=len)[-1])
 
 
-print(longest_consec(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"], 1))
+print(longest_consec(["", ""], 1))
