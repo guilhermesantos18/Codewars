@@ -17,13 +17,14 @@ def longest_consec(strarr, k):
         else:
             lista_palavras_juntas.append(strarr[i])
     for palavra in lista_palavras_juntas:
-        print(palavra)
         for letra in palavra:
             cont += 1
             if cont == len(palavra):
                 lista_comprimento_palavras.append(cont)
                 cont = 0
-    max(lista_comprimento_palavras)
+    maior_comprimento = max(lista_comprimento_palavras)
+    posicao_maior_palavra = lista_comprimento_palavras.index(maior_comprimento)
+    return lista_palavras_juntas[posicao_maior_palavra]
 
 
 print(longest_consec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 1))
