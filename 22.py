@@ -6,4 +6,4 @@ def filter_list(l):
     return list_number
 
 
-print(filter_list([1,2,'aasf','1','123',123]))
+print(filter_list([1, 2, 'aasf', '1', '123', 123]))
