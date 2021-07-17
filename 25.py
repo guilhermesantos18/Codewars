@@ -12,4 +12,5 @@ def step(g, m, n):
         else:
             continue
 
+
 step(2,100,110)
