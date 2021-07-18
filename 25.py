@@ -1,16 +1,29 @@
+lista_primos = []
+
+
 def step(g, m, n):
-    lista = []
-    seg = cont = 0
-    for num in range(m, n + 1):
-        if cont == 0:
-            if num % g == float:
-                seg = num + g
-                cont += 1
-        if seg % 2 == float:
-            lista.append(num)
-            lista.append(seg)
-        else:
-            continue
+    global lista_primos
+    lista_primos_g = []
+    for num in range(m, n):
+        e_primo(num)
+    if lista_primos:
+        for num in lista_primos:
+            if num + g in lista_primos:
+                lista_primos_g.append(num)
+                lista_primos_g.append(num + g)
+            if len(lista_primos_g) == 2:
+                break
+        return lista_primos_g
+    else:
+        return None
 
 
-step(2,100,110)
+def e_primo(num):
+    for i in range(2, num):
+        if num % i == 0:
+            break
+    else:
+        lista_primos.append(num)
+
+
+print(step(2,5,5))
