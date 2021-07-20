@@ -26,4 +26,4 @@ def e_primo(num):
         lista_primos.append(num)
 
 
-print(step(2,5,5))
+print(step(6, 100, 110))
