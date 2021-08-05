@@ -16,7 +16,7 @@ def maze_runner(maze, directions):
             startx -= 1
     if maze[starty][startx] == 3:
         return 'Finish'
-    elif maze[starty][startx] == 1 or maze[starty][startx] == :
+    elif maze[starty][startx] == 1 or maze[starty][startx] == IndexError:
         return 'Dead'
     else:
         return 'Lost'
