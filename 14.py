@@ -19,4 +19,4 @@ def expanded_form(num):
     return res
 
 
-print(expanded_form(9000000))
+print(expanded_form(1532))
