@@ -14,12 +14,11 @@ def maze_runner(maze, directions):
             startx += 1
         elif direc == 'W':
             startx -= 1
-    if maze[starty][startx] == 3:
-        return 'Finish'
-    elif maze[starty][startx] == 1 or maze[starty][startx] == IndexError:
-        return 'Dead'
-    else:
-        return 'Lost'
+        if starty > len(maze) - 1 or startx > len(maze) - 1 or IndexError or maze[starty][startx] == 1:
+            return 'Dead'
+        if maze[starty][startx] == 3:
+            return 'Finish'
+    return 'Lost'
 
 
 maze = [[1, 1, 1, 1, 1, 1, 1],
