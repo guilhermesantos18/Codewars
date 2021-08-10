@@ -1,6 +1,6 @@
 def mean(town, strng):
     index_cidade = strng.find(town)
-    index = 0
+    index = cont = res = 0
     lista_quebralinha = []
     for i in range(len(strng)):
         if strng[i] == '\n':
@@ -8,8 +8,24 @@ def mean(town, strng):
     if lista_quebralinha[lista_quebralinha.index(index_cidade-1)]:
         index = lista_quebralinha[lista_quebralinha.index(index_cidade-1)+1]
     precipatacao_cidade = strng[index_cidade:index]
-    for x in precipatacao_cidade:
-        print(x)
+    pos_virgula = []
+    pos_espacos = []
+    for x in range(len(precipatacao_cidade)):
+        if precipatacao_cidade[x] == ',':
+            pos_virgula.append(x)
+        elif precipatacao_cidade[x] == ' ':
+            pos_espacos.append(x)
+    valores_prec = []
+    pos = pos_espacos[-1]
+    y = len(precipatacao_cidade) + 1
+    for virgula in pos_virgula:
+        valores_prec.append(float(precipatacao_cidade[pos_espacos[cont]:virgula]))
+        cont += 1
+    valores_prec.append(float(precipatacao_cidade[pos:y]))
+    for valor in valores_prec:
+        res += valor
+    media_prec = res / 12
+    return media_prec
 
 
 towns = ["Rome", "London", "Paris", "NY", "Vancouver", "Sydney", "Bangkok", "Tokyo",
@@ -37,4 +53,4 @@ Tokyo:Jan 59.9,Feb 81.5,Mar 106.4,Apr 139.2,May 144.0,Jun 186.0,Jul 155.6,Aug 14
 Beijing:Jan 13.9,Feb 14.7,Mar 18.2,Apr 18.4,May 43.0,Jun 88.1,Jul 224.3,Aug 170.0,Sep 58.4,Oct 38.0,Nov 19.3,Dec 2.7
 Lima:Jan 11.2,Feb 10.9,Mar 10.7,Apr 10.4,May 10.6,Jun 11.8,Jul 14.4,Aug 13.1,Sep 23.3,Oct 1.7,Nov 0.5,Dec 10.7"""
 
-mean('Beijing', data)
+print(mean('Rome', data))
