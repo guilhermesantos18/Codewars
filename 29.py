@@ -1,3 +1,5 @@
+valores_prec = []
+media_prec = 0
 def mean(town, strng):
     index_cidade = strng.find(town)
     index = cont = res = 0
@@ -18,7 +20,6 @@ def mean(town, strng):
             pos_virgula.append(x)
         elif precipatacao_cidade[x] == ' ':
             pos_espacos.append(x)
-    valores_prec = []
     pos = pos_espacos[-1]
     y = len(precipatacao_cidade) + 1
     for virgula in pos_virgula:
@@ -29,6 +30,16 @@ def mean(town, strng):
         res += valor
     media_prec = res / 12
     return media_prec
+
+
+def variance(town, strng):
+    lista_variacao = []
+    for valor in valores_prec:
+        valor -= media_prec
+        print(valor)
+    #     lista_variacao.append(valor ** 2)
+    # variacao = sum(lista_variacao) / 12
+    # return variacao ** 0.5
 
 
 towns = ["Rome", "London", "Paris", "NY", "Vancouver", "Sydney", "Bangkok", "Tokyo",
@@ -56,4 +67,5 @@ Tokyo:Jan 59.9,Feb 81.5,Mar 106.4,Apr 139.2,May 144.0,Jun 186.0,Jul 155.6,Aug 14
 Beijing:Jan 13.9,Feb 14.7,Mar 18.2,Apr 18.4,May 43.0,Jun 88.1,Jul 224.3,Aug 170.0,Sep 58.4,Oct 38.0,Nov 19.3,Dec 2.7
 Lima:Jan 11.2,Feb 10.9,Mar 10.7,Apr 10.4,May 10.6,Jun 11.8,Jul 14.4,Aug 13.1,Sep 23.3,Oct 1.7,Nov 0.5,Dec 10.7"""
 
-print(mean('Rome', data))
+print(mean("London", data))
+print(variance("London", data))
