@@ -5,8 +5,11 @@ def mean(town, strng):
     for i in range(len(strng)):
         if strng[i] == '\n':
             lista_quebralinha.append(i)
-    if lista_quebralinha[lista_quebralinha.index(index_cidade-1)]:
-        index = lista_quebralinha[lista_quebralinha.index(index_cidade-1)+1]
+    if index_cidade > 0:
+        if lista_quebralinha[lista_quebralinha.index(index_cidade-1)]:
+            index = lista_quebralinha[lista_quebralinha.index(index_cidade-1)+1]
+    else:
+        index = lista_quebralinha[0]
     precipatacao_cidade = strng[index_cidade:index]
     pos_virgula = []
     pos_espacos = []
