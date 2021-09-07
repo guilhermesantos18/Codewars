@@ -1,6 +1,5 @@
 def duplicate_count(text):
     text = text.upper()
-    cont = 0
     list_cont_letras = []
     list_letras = []
     for letra in text:
@@ -9,8 +8,7 @@ def duplicate_count(text):
         if list_cont_letras[num] >= 2:
             if text[num] not in list_letras:
                 list_letras.append(text[num])
-                cont += 1
-    return cont
+    return len(list_letras)
 
 
 print(duplicate_count("Indivisibilities"))
