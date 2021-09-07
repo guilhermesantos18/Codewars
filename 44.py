@@ -5,11 +5,9 @@ def highest_rank(arr):
     for num in arr:
         lista_cont_num.append(str(arr.count(num)))
     maior_num = max(lista_cont_num)
-    for i in lista_cont_num:
-        if i == maior_num:
-            print(i)
-            lista_nums.append(arr[lista_cont_num.index(i) + cont])
-            cont += 1
+    for i in range(len(lista_cont_num)):
+        if lista_cont_num[i] == maior_num:
+            lista_nums.append(arr[i])
     return max(lista_nums)
 
 
