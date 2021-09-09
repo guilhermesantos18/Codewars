@@ -4,9 +4,9 @@ def persistence(n):
     while len(n) != 1:
         for num in n:
             print(num)
-#     n = str(mult_nums)
-#     cont += 1
-    # return cont
+        n = str(mult_nums)
+        cont += 1
+    return cont
 
 
 print(persistence(39))
