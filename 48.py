@@ -1,12 +1,13 @@
 def persistence(n):
     n = str(n)
-    mult_nums = cont = 0
+    cont = 0
     while len(n) != 1:
-        for num in n:
-            print(num)
+        mult_nums = int(n[0])
+        for num in n[1:]:
+            mult_nums *= int(num)
         n = str(mult_nums)
         cont += 1
     return cont
 
 
-print(persistence(39))
+print(persistence(25))

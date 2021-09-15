@@ -1,7 +1,6 @@
 def highest_rank(arr):
     lista_cont_num = []
     lista_nums = []
-    cont = 0
     for num in arr:
         lista_cont_num.append(str(arr.count(num)))
     maior_num = max(lista_cont_num)
