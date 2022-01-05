@@ -9,8 +9,21 @@ def increment_string(strng):
                 cont_0 += 1
         else:
             lista_letra.append(letra)
-    num = int(''.join(lista_numeros)) + 1
-    print(str(num).zfill(4))
+    if strng.isalpha():
+        letras = ''.join(lista_letra)
+        return letras + '1'
+    elif strng.isalnum() or strng.isprintable() and not strng == '':
+        num = int(''.join(lista_numeros))
+        if num == 0:
+            num = int(''.join(lista_numeros)) + 1
+            num = str(num).zfill(cont_0)
+        else:
+            num = int(''.join(lista_numeros)) + 1
+            num = str(num).zfill(cont_0 + 1)
+        letras = ''.join(lista_letra)
+        return letras + num
+    else:
+        return '1'
 
 
-increment_string('foo001')
+print(increment_string(''))
