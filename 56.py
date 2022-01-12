@@ -16,9 +16,10 @@ def sum_pairs(ints, s):
             cont_pos = cont
         if cont == ultimo_index:
             break
-        if IndexError:
-            return None
-    num2 = ints[min(lista_cont_pos)]
+    try:
+        num2 = ints[min(lista_cont_pos)]
+    except ValueError:
+        return None
     for num in lista_nums:
         soma = num + num2
         if soma == s:
@@ -27,5 +28,4 @@ def sum_pairs(ints, s):
             break
     return lista_nums2
 
-
-print(sum_pairs([0, 0, -2, 3], 2))
+#Timeout error
