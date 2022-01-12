@@ -35,4 +35,4 @@ def increment_string(strng):
     return strng + str(number)
 
 
-print(increment_string('0000000731929'))
+print(increment_string(''))
