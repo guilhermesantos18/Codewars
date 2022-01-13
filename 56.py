@@ -28,4 +28,4 @@ def sum_pairs(ints, s):
             break
     return lista_nums2
 
-#Timeout error
+# Timeout error
